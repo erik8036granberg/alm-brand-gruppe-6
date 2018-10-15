@@ -1,0 +1,113 @@
+* {
+	box-sizing: border-box;
+}
+
+/*		Rent lir animation		*/
+* {
+	transition: 0.5s;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/*		Side-grid & areas		*/
+.grid {
+	display: grid;
+	grid-template-areas:
+		"nav"
+		"header"
+		"section"
+		"main"
+		"footer";
+	grid-template-columns: 100%;
+	grid-template-rows: 50px 100px 50px 1fr 100px;
+	min-height: 100vh;
+}
+
+header {
+	grid-area: header;
+	background-color: #91d6f9;
+	padding: 1rem;
+}
+
+nav {
+	grid-area: nav;
+	background-color: #fff;
+	z-index: 10;
+	padding: 1rem;
+	max-height: 50px;
+}
+
+main {
+	grid-area: main;
+	background-color: #fff;
+	z-index: 10;
+	padding: 1rem;
+}
+
+section {
+	grid-area: section;
+	background-color: #cdf2fc;
+	z-index: 10;
+	padding: 1rem;
+}
+
+footer {
+	grid-area: footer;
+	background-color: #032846;
+	padding: 1rem;
+	color: #fff;
+}
+
+/*
+-------------------------- media queries 640px --------------------------
+*/
+
+@media screen and (min-width: 640px) {
+
+	/*		Side-grid & areas		*/
+	.grid {
+		grid-template-areas:
+			"nav    nav"
+			"header header"
+			"main   section"
+			"footer footer";
+		grid-template-columns: 4fr 2fr;
+		grid-template-rows: 50px 100px 1fr 100px;
+	}
+
+	/*		Baggrund-main-row bag main & section placeret	*/
+	.baggrund-main-row {
+		grid-column: 1 /span 4;
+		grid-row: 2 / span 2;
+		background-color: orange;
+	}
+}
+
+/*
+-------------------------- media queries 900px --------------------------
+*/
+
+@media screen and (min-width: 900px) {
+
+	/*		Side-grid & areas		*/
+	.grid {
+		grid-template-columns: 1fr 4fr 2fr 1fr;
+
+		/* ændrer gridareas*/
+		grid-template-areas:
+			"nav    nav    nav    nav"
+			"header header header header"
+			"...... main   section ......"
+			"footer footer footer footer";
+	}
+
+	/*		Margins, så man fornemmer baggrunds-row farve		*/
+	main,
+	section {
+		margin: 1rem 1rem 1rem 0;
+	}
+
+}
