@@ -19,7 +19,7 @@ body {
     display: grid;
     grid-template-areas: "nav" "header" "section" "main" "footer";
     grid-template-columns: 100%;
-    grid-template-rows: 50px auto 50px 1fr 100px;
+    grid-template-rows: 50px auto auto 1fr 100px;
     min-height: 100vh;
 }
 
@@ -113,6 +113,26 @@ section {
     background-color: #cdf2fc;
     z-index: 10;
     padding: 1rem;
+}
+
+section img {
+    max-width: 100%;
+}
+
+.ansoeg {
+    background-color: #fff;
+}
+
+.ansoeg p {
+    font-family: 'Source Serif Pro', serif;
+}
+
+.ansoeg hr {
+    color: #8492a5;
+    background-color: #8492a5;
+    height: 1px;
+    border: 0;
+    width: 100%;
 }
 
 footer {
