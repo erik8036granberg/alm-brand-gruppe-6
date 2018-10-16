@@ -1,64 +1,132 @@
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /*		Rent lir animation		*/
+
 * {
-	transition: 0.5s;
+    transition: 0.5s;
 }
 
 body {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /*		Side-grid & areas		*/
+
 .grid {
-	display: grid;
-	grid-template-areas:
-		"nav"
-		"header"
-		"section"
-		"main"
-		"footer";
-	grid-template-columns: 100%;
-	grid-template-rows: 50px 100px 50px 1fr 100px;
-	min-height: 100vh;
+    display: grid;
+    grid-template-areas: "nav" "header" "section" "main" "footer";
+    grid-template-columns: 100%;
+    grid-template-rows: 50px auto 50px 1fr 100px;
+    min-height: 100vh;
 }
 
 header {
-	grid-area: header;
-	background-color: #91d6f9;
-	padding: 1rem;
+    grid-area: header;
+    position: relative;
+    background-color: #032846;
+    padding: 3rem;
+    color: white;
+    text-align: center;
 }
+
+header .button2 {
+    background-color: #344a6a;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    transform: rotate(270deg);
+    position: absolute;
+    top: 50px;
+    right: -42px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.button2:hover {
+    background-color: #fff;
+    color: #344a6a;
+}
+
+hr {
+    color: #00b9ea;
+    background-color: #00b9ea;
+    height: 3px;
+    border: 0;
+    width: 20%;
+}
+
 
 nav {
-	grid-area: nav;
-	background-color: #fff;
-	z-index: 10;
-	padding: 1rem;
-	max-height: 50px;
+    grid-area: nav;
+    background-color: #fff;
+    z-index: 10;
+    padding: 1rem;
+    max-height: 50px;
+    grid-area: nav;
+    position: relative;
+    background-color: #fff;
+    z-index: 10;
+    padding: 1rem;
+    /*    max-height: 50px;*/
 }
 
+nav img {
+    max-width: 75px;
+}
+
+nav .button1 {
+    background-color: white;
+    color: #344a6a;
+    border: 2px solid #00b9ea;
+    border-radius: 50px;
+    padding: 3px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.button1:hover {
+    background-color: #00b9ea;
+    color: #fff;
+}
+
+
 main {
-	grid-area: main;
-	background-color: #fff;
-	z-index: 10;
-	padding: 1rem;
+    grid-area: main;
+    background-color: #fff;
+    z-index: 10;
+    padding: 1rem;
 }
 
 section {
-	grid-area: section;
-	background-color: #cdf2fc;
-	z-index: 10;
-	padding: 1rem;
+    grid-area: section;
+    background-color: #cdf2fc;
+    z-index: 10;
+    padding: 1rem;
 }
 
 footer {
-	grid-area: footer;
-	background-color: #032846;
-	padding: 1rem;
-	color: #fff;
+    grid-area: footer;
+    background-color: #032846;
+    padding: 1rem;
+    color: #fff;
+}
+
+h1 {
+    font-family: 'Source Serif Pro', serif;
+}
+
+p {
+    font-family: 'Work Sans', sans-serif;
 }
 
 /*
@@ -67,23 +135,19 @@ footer {
 
 @media screen and (min-width: 640px) {
 
-	/*		Side-grid & areas		*/
-	.grid {
-		grid-template-areas:
-			"nav    nav"
-			"header header"
-			"main   section"
-			"footer footer";
-		grid-template-columns: 4fr 2fr;
-		grid-template-rows: 50px 100px 1fr 100px;
-	}
+    /*		Side-grid & areas		*/
+    .grid {
+        grid-template-areas: "nav    nav" "header header" "main   section" "footer footer";
+        grid-template-columns: 4fr 2fr;
+        grid-template-rows: 50px 100px 1fr 100px;
+    }
 
-	/*		Baggrund-main-row bag main & section placeret	*/
-	.baggrund-main-row {
-		grid-column: 1 /span 4;
-		grid-row: 2 / span 2;
-		background-color: orange;
-	}
+    /*		Baggrund-main-row bag main & section placeret	*/
+    .baggrund-main-row {
+        grid-column: 1 /span 4;
+        grid-row: 2 / span 2;
+        background-color: orange;
+    }
 }
 
 /*
@@ -92,22 +156,18 @@ footer {
 
 @media screen and (min-width: 900px) {
 
-	/*		Side-grid & areas		*/
-	.grid {
-		grid-template-columns: 1fr 4fr 2fr 1fr;
+    /*		Side-grid & areas		*/
+    .grid {
+        grid-template-columns: 1fr 4fr 2fr 1fr;
 
-		/* ændrer gridareas*/
-		grid-template-areas:
-			"nav    nav    nav    nav"
-			"header header header header"
-			"...... main   section ......"
-			"footer footer footer footer";
-	}
+        /* ændrer gridareas*/
+        grid-template-areas: "nav    nav    nav    nav" "header header header header" "...... main   section ......" "footer footer footer footer";
+    }
 
-	/*		Margins, så man fornemmer baggrunds-row farve		*/
-	main,
-	section {
-		margin: 1rem 1rem 1rem 0;
-	}
+    /*		Margins, så man fornemmer baggrunds-row farve		*/
+    main,
+    section {
+        margin: 1rem 1rem 1rem 0;
+    }
 
 }
