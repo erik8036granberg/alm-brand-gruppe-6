@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Låne-slider</title>
+	<style>
+
+		* {box-sizing: border-box;
+		}
+
+		:focus {
+		outline: 0;
+		}
+
+		fieldset {
+			border: none;
+		}
+
+/*		Kun middelertidigt design - tilpas    */
+
+		.laaneberegner {
+		font-family: Verdana, Geneva, sans-serif;
+		max-width: 600px;
+		min-width: 300px;
+		background-color: #cdf2fc;
+		padding: 30px 30px 50px;
+		}
+
+		.grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+
+		.grid h2 {
+			grid-column: 1 /span 4;
+		}
+
+		.grid p {
+			grid-column: 1 /span 4;
+			margin: 0 0 75px;
+		}
+
+		.grid .slider {
+			grid-column: 1 /span 4;
+			margin: 0 0 25px;
+		}
+
+		.grid .slider-start{
+			grid-column: 1 /span 2;
+			margin: 0 0 1px;
+		}
+
+		.grid .slider-end{
+			grid-column: 3 /span 2;
+			text-align: right;
+			font-weight: bold;
+		}
+
+		.grid .midt {
+			grid-column: 1 /span 4;
+			margin: 15px 0 0;
+			text-align: center;
+		}
+
+		.grid .belob {
+			font-weight: bold;
+			font-size: 150%;
+		}
+
+		.grid .knap {
+		margin: 50px 0 0;
+		}
+
+		.grid button {
+		background: #00b9ea;
+		color: #fff;
+		font-size: 20px;
+  		height: 26px;
+  		width: auto;
+		padding: 13px 20px 35px;
+		border: none;
+  		border-radius: 25px;
+		}
+
+		.grid button:hover {
+		background: #032846;
+		transition: 0.5s;
+		}
+
+
+		input[type=range] {
+		-webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+		width: 100%; /* Specific width is required for Firefox. */
+		background: transparent; /* Otherwise white in Chrome */
+		}
+
+		input[type=range]::-webkit-slider-thumb {
+  		-webkit-appearance: none;
+		}
+
+		input[type=range]:focus {
+		outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+		}
+
+		input[type=range]::-ms-track {
+		width: 100%;
+  		cursor: pointer;
+
+  		/* Hides the slider so custom styles can be added */
+  		background: transparent;
+  		border-color: transparent;
+  		color: transparent;
+}
+
+
+		input[type=range] {
+  		height: 1px;
+  		-webkit-appearance: none;
+  		margin: 10px 0;
+  		width: 100%;
+		background: #000;
+  		border-radius: 1px;
+		}
+
+		input[type=range]::-webkit-slider-thumb {
+  		border: 3px solid #cdf2fc;
+		background: #00b9ea;
+  		height: 26px;
+  		width: 26px;
+  		border-radius: 15px;
+  		cursor: pointer;
+        }
+
+		input[type=range]::-moz-range-thumb {
+  		border: 3px solid #cdf2fc;
+		background: #00b9ea;
+  		height: 26px;
+  		width: 26px;
+  		border-radius: 15px;
+  		cursor: pointer;
+        }
+
+		input[type=range]::-ms-thumb {
+  		border: 3px solid #cdf2fc;
+		background: #00b9ea;
+  		height: 26px;
+  		width: 26px;
+  		border-radius: 15px;
+  		cursor: pointer;
+        }
+
+
+	</style>
+
+</head>
+
+<body>
+	<div class="laaneberegner">
+		<fieldset>
+			<div class="grid">
+
+				<h2>Beregn dit lån</h2>
+
+				<p>Tag et forbrugslån på i mellem 5-100.000 kr.<br>Med en rente på kun 7% og en medfølgende god og tryg rådgivning.</p>
+
+
+
+				<div class="slider-start">Lånebeløb:</div>
+				<div class="slider-end"><span class="vis_belob">5000</span> kr.</div>
+
+				<div class="slider"><input type="range" id="belob_slider" min="5000" max="100000" value="5000" step="1000" /></div>
+
+				<div class="slider-start">Løbetid:</div>
+				<div class="slider-end"><span class="vis_varighed">0</span> mdr.</div>
+				<div class="slider"><input type="range" id="varighed_slider" min="1" max="72" value="0" step="1" /></div>
+
+				<div class="midt">Månedlig tilbagebetaling</div>
+				<div class="midt belob"><span class="vis_udregning">0</span> kr.</div>
+
+				<div class="midt knap"><button>Ansøg</button></div>
+
+
+
+			</div>
+		</fieldset>
+	</div>
+
+	<script>
+		//		Variabler
+		let belob;
+		let varighed;
+		const rente = 0.07;
+
+		//		eventlisteners for slidere
+		document.querySelector("#belob_slider").addEventListener("input", VisBelob);
+		document.querySelector("#varighed_slider").addEventListener("input", visVarighed);
+
+
+
+		function VisBelob() {
+
+			console.log("VisBelob: " + this.value);
+
+			belob = parseInt(this.value);
+
+			//		vis det valgte beløb ved slideren
+			document.querySelector(".vis_belob").textContent = belob;
+
+			//		Gå til udregning hvis der er valgt beløb og varighed
+			if (belob != undefined && varighed != undefined) {
+				visUdregning();
+			}
+
+		}
+
+		function visVarighed() {
+
+			console.log("visVarighed: " + this.value);
+
+			varighed = parseInt(this.value);
+
+			//		vis det antal måneder ved slideren
+			document.querySelector(".vis_varighed").textContent = varighed;
+
+			//		Gå til udregning hvis der er valgt beløb og varighed
+			if (belob != undefined && varighed != undefined) {
+				visUdregning();
+			}
+
+		}
+
+		function visUdregning() {
+			console.log("visUdregning kører");
+
+			//			Udregn rente
+			let rentebelob = belob * rente;
+
+			//			Læg rente til beløbet
+			let rentesum = belob + rentebelob;
+
+			//			Udregn afdrag pr måned
+			let udregning = rentesum / varighed;
+
+			//			Afrund til hele kroner
+			let afrunding = Math.round(udregning);
+
+			//			Vis udregning
+			document.querySelector(".vis_udregning").textContent = afrunding;
+		}
+
+
+
+
+
+
+
+
+		//		function tusindPunktum(x) {
+		//			alert("tusindPunktum");
+		//			x = x.toString();
+		//			var pattern = /(-?\d+)(\d{3})/;
+		//			while (pattern.test(x))
+		//				x = x.replace(pattern, "$1.$2");
+		//			return x;
+		//		}
+
+	</script>
+
+
+</body>
+
+</html>
