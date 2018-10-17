@@ -51,6 +51,25 @@ header {
 	background-position: center
 }
 
+
+.video-billede {
+	grid-column: 1 /span 5;
+	grid-row: 1 /span 2;
+	background-image: url(images/video.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center
+}
+
+.ansoeg-billede {
+	grid-column: 1 /span 5;
+	grid-row: 1 /span 2;
+	background-image: url(images/ansoeg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center
+}
+
 .bluebox {
 	background-color: #032846;
 	background-color: rgba(3, 40, 70, 0.8);
