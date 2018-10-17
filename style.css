@@ -147,7 +147,9 @@ p {
     font-family: 'Work Sans', sans-serif;
 }
 
-
+svg {
+    max-width: 100vw;
+}
 
 /*--------Slider med udregning ---------*/
 
