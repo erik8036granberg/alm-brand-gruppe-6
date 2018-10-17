@@ -307,10 +307,10 @@ input[type=range]::-ms-thumb {
 }
 
 /*
--------------------------- media queries 640px --------------------------
+-------------------------- media queries 708px --------------------------
 */
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 708px) {
 
     /*		Side-grid & areas		*/
     .grid {
@@ -324,6 +324,14 @@ input[type=range]::-ms-thumb {
         grid-column: 1 /span 4;
         grid-row: 2 / span 2;
         background-color: orange;
+    }
+
+}
+
+
+@media screen and (max-width: 708px) {
+    .splash_billede {
+        display: none;
     }
 }
 
