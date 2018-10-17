@@ -110,14 +110,11 @@ main {
 
 section {
     grid-area: section;
-    background-color: #cdf2fc;
+    /*    background-color: #cdf2fc;*/
     z-index: 10;
-    padding: 1rem;
+    /*    padding: 1rem;*/
 }
 
-section img {
-    max-width: 100%;
-}
 
 .ansoeg {
     background-color: #fff;
@@ -148,6 +145,163 @@ h1 {
 
 p {
     font-family: 'Work Sans', sans-serif;
+}
+
+
+
+/*--------Slider med udregning ---------*/
+
+* {
+    box-sizing: border-box;
+}
+
+:focus {
+    outline: 0;
+}
+
+fieldset {
+    border: none;
+}
+
+.laaneberegner {
+    font-family: Verdana, Geneva, sans-serif;
+    max-width: 600px;
+    min-width: 300px;
+    background-color: #cdf2fc;
+    border-radius: 10px;
+    margin: 2vw;
+    padding: 2vw;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.grid h2 {
+    grid-column: 1 /span 4;
+}
+
+.grid p {
+    grid-column: 1 /span 4;
+    margin: 0 0 75px;
+}
+
+.grid .slider {
+    grid-column: 1 /span 4;
+    margin: 0 0 25px;
+}
+
+.grid .slider-start {
+    grid-column: 1 /span 2;
+    margin: 0 0 1px;
+}
+
+.grid .slider-end {
+    grid-column: 3 /span 2;
+    text-align: right;
+    font-weight: bold;
+}
+
+.grid .midt {
+    grid-column: 1 /span 4;
+    margin: 15px 0 0;
+    text-align: center;
+}
+
+.grid .belob {
+    font-weight: bold;
+    font-size: 150%;
+}
+
+/*---- knap -----*/
+
+.midt_knap {
+    margin: 50px 0 0;
+}
+
+.midt_knap {
+    background: #00b9ea;
+    color: #fff;
+    font-size: 20px;
+    height: 26px;
+    width: 30vw;
+    text-align: center;
+    text-decoration: none;
+    padding: 13px 20px 35px;
+    border: none;
+    border-radius: 25px;
+}
+
+.midt_knap:hover {
+    background: #032846;
+    transition: 0.5s;
+}
+
+
+input[type=range] {
+    -webkit-appearance: none;
+    /* Hides the slider so that custom slider can be made */
+    width: 100%;
+    /* Specific width is required for Firefox. */
+    background: transparent;
+    /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+    /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+
+    /* Hides the slider so custom styles can be added */
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+
+input[type=range] {
+    height: 1px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+    background: #000;
+    border-radius: 1px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    border: 3px solid #cdf2fc;
+    background: #00b9ea;
+    height: 26px;
+    width: 26px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: 3px solid #cdf2fc;
+    background: #00b9ea;
+    height: 26px;
+    width: 26px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-thumb {
+    border: 3px solid #cdf2fc;
+    background: #00b9ea;
+    height: 26px;
+    width: 26px;
+    border-radius: 15px;
+    cursor: pointer;
 }
 
 /*
