@@ -31,10 +31,30 @@ body {
 header {
 	grid-area: header;
 	position: relative;
+	display: grid;
+	grid-template-columns: 20% 20% 20% 20% 20%;
+	grid-template-rows: 30vw auto auto;
+}
+
+.billede {
+	grid-column: 1 /span 5;
+	grid-row: 1 /span 2;
+	background-color: red;
+	background-image: url(images/splash_billede.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center
+}
+
+.bluebox {
 	background-color: #032846;
-	padding: 3rem;
+	background-color: rgba(3, 40, 70, 0.8);
+	grid-column: 2 /span 3;
+	grid-row: 2 /span 2;
+	padding: 1rem;
 	color: white;
 	text-align: center;
+	z-index: 10;
 }
 
 header .button2 {
@@ -327,11 +347,19 @@ fieldset {
 			"main   section"
 			"footer footer";
 		grid-template-columns: 60% 40%;
-		grid-template-rows: 50px 100px 1fr 100px;
+		grid-template-rows: 50px auto 1fr 100px;
 	}
 
 	.laaneberegner {
 		border-radius: 10px;
+	}
+
+	header {
+		grid-template-rows: 20vw auto auto;
+	}
+
+	.bluebox {
+		padding: 2rem;
 	}
 
 	/*		Baggrund-main-row bag main & section placeret	*/
@@ -413,8 +441,8 @@ fieldset {
 		grid-template-columns: 1fr 3fr 2fr 1fr;
 
 		/* ændrer gridareas*/
-		grid-template-areas: "nav    nav    nav    nav"
-			"header header header header"
+		grid-template-areas: ".    nav    nav    ."
+			". header header ."
 			". main   section ."
 			"footer footer footer footer";
 	}
