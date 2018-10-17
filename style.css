@@ -39,7 +39,6 @@ header {
 .billede {
 	grid-column: 1 /span 5;
 	grid-row: 1 /span 2;
-	background-color: red;
 	background-image: url(images/splash_billede.png);
 	background-repeat: no-repeat;
 	background-size: cover;
