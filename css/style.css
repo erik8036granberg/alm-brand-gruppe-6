@@ -19,6 +19,7 @@
 		body {
 			margin: 0;
 			padding: 0;
+			font-family: 'Georgia', serif;
 		}
 
 		img {
@@ -272,7 +273,6 @@
 		}
 
 		.laaneberegner {
-			font-family: Verdana, Geneva, sans-serif;
 			background-color: #ccf1fb;
 			height: 600px;
 			padding: 2rem 2rem 3rem;
@@ -330,13 +330,15 @@
 			background: var(--logo_lys);
 			color: #fff;
 			font-size: 20px;
-			height: 26px;
-			width: 30vw;
+			height: 40px;
+			width: 150px;
 			text-align: center;
 			text-decoration: none;
-			padding: 5px 15px 10px;
-			margin: 10px border: none;
+			padding: 7px 15px 10px;
+			border: none;
 			border-radius: 25px;
+			margin: 0 auto;
+			cursor: pointer;
 		}
 
 		.laaneberegner .midt_knap:hover {
@@ -423,10 +425,14 @@
 		.bredde {
 			width: 100%;
 			max-width: 300px;
-
-
 			grid-column: 1 /span 4;
 		}
+
+		.rykned {
+			margin-top: 200px;
+			grid-column: 1 /span 4;
+		}
+
 
 		.youtube-video {
 			margin: 0 0 30px;

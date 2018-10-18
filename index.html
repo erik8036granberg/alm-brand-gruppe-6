@@ -50,7 +50,9 @@
 
 		<!--        <button class="button1">Ansøg</button>-->
 
-		<a class="button1" href="ansoeg.html">Ansøg</a>
+		<a class="button1 scroll" data-speed="500" href="#slide-to-laan">Ansøg</a>
+
+
 
 	</nav>
 
@@ -83,7 +85,7 @@
 	</main>
 
 	<!---------  Låneberegner   --------->
-	<section class="laane-skyder">
+	<section class="laane-skyder" id="slide-to-laan">
 		<div class="laanecontainer">
 			<div id="boxContainer">
 				<div class="box one">
@@ -124,7 +126,7 @@
 							<div class="lb_grid">
 
 								<h2>Dine oplysninger</h2>
-								<p>Step 2 af 4</p>
+								<p>Trin 2 af 4</p>
 
 								<div class="overskrift">Fornavn:</div>
 								<div class="tekstfelt"><input type="text"></div>
@@ -136,7 +138,7 @@
 								<div class="tekstfelt"><input type="text"></div>
 
 								<div class="overskrift">Telefon/mobil</div>
-								<div class="tekstfelt">><input type="text"></div>
+								<div class="tekstfelt"><input type="text"></div>
 
 								<div class="midt knap_box knap-two">
 									<div class="midt_knap">Næste</div>
@@ -154,24 +156,16 @@
 							<div class="lb_grid">
 
 								<h2>Din økonomi</h2>
-								<p>Step 3 af 4</p>
+								<p>Trin 3 af 4</p>
 
 								<div class="overskrift">Din månedlige inkomst inden skat</div>
 								<div class="tekstfelt"><input type="text" class="bredde"></div>
 
 								<div class="overskrift">Er du registreret i RKI</div>
 								<div class="tekstfelt"><input type="text" class="bredde"></div>
-								<!--
-                                <div>Din månedlige inkomst inden skat</div>
-                                <div><input type="text"></div>
-
-                                <div>Er du registreret i RKI</div>
-                                <div><input type="text"></div>
--->
-
 
 								<div class="midt knap_box knap-three">
-									<div class="midt_knap">Start</div>
+									<div class="midt_knap">Næste</div>
 								</div>
 
 							</div>
@@ -179,14 +173,14 @@
 					</div>
 
 				</div>
-				<div class="box three">
+				<div class="box four">
 
 					<div class="laaneberegner">
 						<fieldset>
 							<div class="lb_grid">
 
 								<h2>Bekræft ansøgning</h2>
-								<p>Step 4 af 4</p>
+								<p>Trin 4 af 4</p>
 
 								<div class="overskrift">E-mail
 								</div>
@@ -198,6 +192,23 @@
 								<div class="midt knap_box knap-four">
 									<div class="midt_knap">Ansøg</div>
 								</div>
+
+							</div>
+						</fieldset>
+					</div>
+
+				</div>
+				<div class="box five">
+
+					<div class="laaneberegner">
+						<fieldset>
+							<div class="lb_grid">
+
+								<div class="rykned">
+									<h2>Tak for din ansøgning</h2>
+									<p>Vi kontakter dig inden for<br> 2 hverdage.</p>
+								</div>
+
 
 							</div>
 						</fieldset>
@@ -228,6 +239,7 @@
 	<script src="js/infografik.js"></script>
 	<script src="js/laaneberegner.js"></script>
 	<script src="js/aniscript.js"></script>
+	<script src="js/scoll-to.js"></script>
 
 </body>
 
