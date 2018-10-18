@@ -150,6 +150,11 @@ main {
 	padding: 2rem;
 }
 
+main .content {
+	margin: 0 auto;
+	max-width: 560px;
+}
+
 section.laane-skyder {
 	grid-area: laane-skyder;
 	z-index: 10;
@@ -213,10 +218,6 @@ svg {
 	padding-bottom: 5vw;
 	margin-top: -12vw;
 	z-index: 20;
-}
-
-video {
-	padding-top: 0;
 }
 
 /*--------Slider med udregning ---------*/
@@ -369,6 +370,25 @@ fieldset {
 	cursor: pointer;
 }
 
+.youtube-video {
+	margin: 0 0 30px;
+}
+
+.hs-responsive-embed-youtube iframe {
+	position: absolute;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.hs-responsive-embed-youtube {
+	margin: 0px;
+	margin-bottom: 0.5em;
+	position: relative;
+	padding-bottom: 56.25%;
+	/* 16:9 Aspect Ratio */
+	padding-top: 0px;
+}
+
 /*
 -------------------------- media queries 708px --------------------------
 */
@@ -403,6 +423,24 @@ fieldset {
 		padding: 2rem;
 	}
 
+	.youtube-video {
+		margin: 0 auto 50px;
+	}
+
+	.hs-responsive-embed-youtube iframe {
+		position: absolute;
+		width: 100% !important;
+		height: 100% !important;
+	}
+
+	.hs-responsive-embed-youtube {
+		margin: 0px;
+		margin-bottom: 0.5em;
+		position: relative;
+		padding-bottom: 56.25%;
+		/* 16:9 Aspect Ratio */
+		padding-top: 0px;
+	}
 }
 
 
