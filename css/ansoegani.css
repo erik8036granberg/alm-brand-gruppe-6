@@ -1,0 +1,44 @@
+#boxContainer {
+	position: absolute;
+	width: 100%;
+	Height: 100%;
+	overflow: hidden;
+}
+
+.box {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.one {
+	z-index: 4;
+}
+
+.two {
+	z-index: 3;
+}
+
+.three {
+	z-index: 2;
+}
+
+.four {
+	z-index: 1;
+}
+
+.slideanimation {
+	animation-fill-mode: forwards;
+	animation-name: slide;
+	animation-duration: 0.9s;
+}
+
+@keyframes slide {
+	from {
+		transform: translateX(0%);
+	}
+
+	to {
+		transform: translateX(100%);
+	}
+}
