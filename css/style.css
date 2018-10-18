@@ -27,6 +27,7 @@
 
 		/*		Side-grid & areas		*/
 		.grid {
+
 			display: grid;
 			grid-template-areas:
 				"nav"
@@ -81,7 +82,7 @@
 		}
 
 		.bluebox {
-			background-color: rgba(3, 40, 70, 0.8);
+			background-color: rgba(3, 40, 70, 0.95);
 			grid-column: 2 /span 3;
 			grid-row: 2 /span 2;
 			padding: 1rem;
@@ -113,9 +114,13 @@
 		hr {
 			color: var(--logo_lys);
 			background-color: var(--logo_lys);
-			height: 3px;
+			height: 2.5px;
 			border: 0;
 			width: 20%;
+		}
+
+		main hr {
+			float: left;
 		}
 
 
@@ -208,6 +213,10 @@
 			background-color: var(--logo_mork);
 			padding: 2rem;
 			color: #fff;
+			font-family: 'Work Sans', sans-serif;
+			font-weight: 300;
+			text-align: center;
+			font-size: 0.8em;
 		}
 
 		.footer-grid {
@@ -215,12 +224,23 @@
 			grid-template-columns: 100%;
 		}
 
+		.bluebox h1 {
+			font-size: 2.3em;
+			font-weight: 700;
+		}
+
 		h1 {
+			font-family: 'Source Serif Pro', serif;
+		}
+
+		h2 {
 			font-family: 'Source Serif Pro', serif;
 		}
 
 		p {
 			font-family: 'Work Sans', sans-serif;
+			font-weight: 300;
+			line-height: 1.4;
 		}
 
 		svg {
@@ -390,6 +410,7 @@
 		}
 
 		.overskrift {
+
 			grid-column: 1 /span 4;
 			padding-bottom: 5px;
 		}
@@ -403,6 +424,8 @@
 			width: 100%;
 			max-width: 300px;
 
+
+			grid-column: 1 /span 4;
 		}
 
 		.youtube-video {
@@ -470,6 +493,10 @@
 				padding: 2rem;
 			}
 
+			.bluebox h1 {
+				font-size: 2.8em;
+			}
+
 		}
 
 
@@ -512,6 +539,10 @@
 			nav .button1 {
 				top: 22px;
 				right: 15px;
+			}
+
+			.bluebox h1 {
+				font-size: 3em;
 			}
 
 		}
