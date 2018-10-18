@@ -391,10 +391,18 @@
 
 		.overskrift {
 			grid-column: 1 /span 4;
+			padding-bottom: 5px;
 		}
 
-		.input {
+		.tekstfelt {
 			grid-column: 1 /span 4;
+			padding-bottom: 20px;
+		}
+
+		.bredde {
+			width: 100%;
+			max-width: 300px;
+
 		}
 
 		.youtube-video {
